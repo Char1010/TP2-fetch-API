@@ -1,13 +1,10 @@
 // API à utiliser pour les images de chiens: https://dog.ceo/api/breeds/image/random
 
-
-
-fetch('https://dog.ceo/api/breeds/image/random')
-
-.then ((response)=> {
-    return response.text()
+let url= 'https://dog.ceo/api/breeds/image/random';
+let btn = document.getElementById('btn btn-primary');
+btn.addEventListener('click',() =>{
+fetch(url)
+    .then(response => response.json())
+    .then(data=>console.log(data))
+    .catch(error=>console.log(error))
 })
-.then ((text)=>{
-    console.log(text)
-})
-
